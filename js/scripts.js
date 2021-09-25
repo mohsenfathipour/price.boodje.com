@@ -28,7 +28,8 @@ function update_price(){
         $("#uae").html(number_format(data[10].price));
 
 
-        // Todo: Update Time And Date
+        // Time
+        $("#time").html(data['date']);
 
         $('.price-box h4').removeClass('blur');
     });
