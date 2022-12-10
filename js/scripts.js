@@ -9,7 +9,7 @@ $(document).ready(function (){
 function update_price(){
     $('.price-box h4').addClass('blur');
 
-    $.get('https://saaer.ir/api/get-gold-currency', function (data, status) {
+    $.get('https://api.boodje.com/api/price', function (data, status) {
         data = JSON.parse(data);
         data = data.data;
         console.log(data);
