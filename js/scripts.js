@@ -9,7 +9,7 @@ $(document).ready(function (){
 function update_price(){
     $('.price-box h4').addClass('blur');
 
-    $.get('https://api.boodje.com/api/price/latest', function (data, status) {
+    $.get('https://api.boodje.com/api/service/latest-price', function (data, status) {
         data = data.data;
         console.log(data);
         $("#sekke-qadim").html(number_format(data[3].price ) + ',000');
