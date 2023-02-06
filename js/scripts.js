@@ -8,10 +8,12 @@ $(document).ready(function (){
 
 function update_price(){
     $('.price-box h4').addClass('blur');
+    $('#time').addClass('blur');
     $('#refresh').removeClass('fa-sync');
     $('#refresh').addClass('spinner-border');
 
     $.get('https://api.boodje.com/api/service/latest-price', function (data, status) {
+        let time = data.message;
         data = data.data;
         console.log(data);
         $("#sekke-qadim").html(number_format(data[3].price ) + ',000');
@@ -30,9 +32,10 @@ function update_price(){
 
 
         // Time
-        $("#time").html(data['date']);
+        $("#time").html(time);
 
         $('.price-box h4').removeClass('blur');
+        $('#time').removeClass('blur');
         $('#refresh').removeClass('spinner-border');
         $('#refresh').addClass('fa-sync');
     });
