@@ -8,6 +8,8 @@ $(document).ready(function (){
 
 function update_price(){
     $('.price-box h4').addClass('blur');
+    $('#refresh').removeClass('fa-sync');
+    $('#refresh').addClass('spinner-border');
 
     $.get('https://api.boodje.com/api/service/latest-price', function (data, status) {
         data = data.data;
@@ -31,6 +33,8 @@ function update_price(){
         $("#time").html(data['date']);
 
         $('.price-box h4').removeClass('blur');
+        $('#refresh').removeClass('spinner-border');
+        $('#refresh').addClass('fa-sync');
     });
 }
 
